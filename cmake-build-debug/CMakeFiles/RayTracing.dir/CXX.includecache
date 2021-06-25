@@ -594,10 +594,6 @@ algorithm
 cassert
 -
 
-C:/Users/ibrah/Workspace/RayTracing/main.cpp
-catch.hpp
-C:/Users/ibrah/Workspace/RayTracing/catch.hpp
-
 C:/Users/ibrah/Workspace/RayTracing/tests.cpp
 bits/stdc++.h
 -
