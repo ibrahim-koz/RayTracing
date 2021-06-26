@@ -3,16 +3,93 @@
 
 using namespace std;
 
-struct PpmImage{
+class Image{
 
 };
 
+class PpmImage: public Image{
+public:
+    string format_type;
+    int height, width;
+    int scale_factor;
+    const int rgb_channel = 3;
 
-PpmImage ReadPpmImage(string img_path){
+    vector<vector<int>> rbg_values;
+    PpmImage(string formatType, int height, int width, int scaleFactor) : format_type(std::move(formatType)),
+                                                                                 height(height), width(width),
+                                                                                 scale_factor(scaleFactor),
+                                                                                 rbg_values(height * width, vector<int>(this->rgb_channel)){
+    }
 
-}
+    void AddPixel(int red, int green, int blue){
+        static int i = 0;
+        rbg_values.at(i).at(0) = red;
+        rbg_values.at(i).at(1) = green;
+        rbg_values.at(i).at(2) = blue;
+        i++;
+    }
 
-void DrawSimplePpm(string img_path){
+
+};
+
+class ReadImageStrategy{
+public:
+    virtual Image* read(string img_path) = 0;
+    virtual ~ReadImageStrategy() = default;
+};
+
+class PpmImageStrategy : public ReadImageStrategy{
+public:
+    PpmImage* read(string img_path) override{
+        stringstream ss;
+        string line;
+        ifstream myfile(img_path);
+        if (myfile.is_open()){
+            string format_type;
+            int height, width;
+            int scale_factor;
+
+            getline(myfile, line);
+            ss << line;
+            ss >> format_type;
+            getline(myfile, line);
+            ss << line;
+            ss >> height >> width;
+            getline(myfile, line);
+            ss << line;
+            ss >> scale_factor;
+            auto ppmImage = new PpmImage(format_type, height, width, scale_factor);
+
+            int red, blue, green;
+            while (getline(myfile, line)){
+                ss << line;
+                ss >> red >> blue >> green;
+                ppmImage->AddPixel(red, green, blue);
+            }
+            myfile.close();
+            return ppmImage;
+        }
+        else{
+            cout << "Unable to open file";
+            return nullptr;
+        }
+    }
+};
+
+class ReadImage{
+public:
+    ReadImageStrategy* readImageStrategy;
+    void PickStrategy(ReadImageStrategy *strategy){
+        delete this->readImageStrategy;
+        this->readImageStrategy = strategy;
+    }
+
+    [[nodiscard]] Image* read(string img_path) const{
+        return this->readImageStrategy->read(std::move(img_path));
+    }
+};
+
+void DrawSimplePpm(const string& img_path){
     const int img_height = 256;
     const int img_width = 256;
 
@@ -39,14 +116,21 @@ void DrawSimplePpm(string img_path){
     target.close();
 }
 
-bool operator==(PpmImage ppm_image1, PpmImage ppm_image2){
-    //
+bool operator==(const PpmImage& ppm_image1, const PpmImage& ppm_image2){
+    if (ppm_image1.format_type == ppm_image2.format_type
+    &&  ppm_image1.height == ppm_image2.height
+    &&  ppm_image1.width == ppm_image2.width
+    &&  ppm_image1.rbg_values == ppm_image2.rbg_values)
+        return true;
+    return false;
 }
 
 
 TEST_CASE("Output an image"){
-    //auto expected_image = ReadPpmImage("img_path");
+    auto image_reader = ReadImage();
+    image_reader.PickStrategy(new PpmImageStrategy());
+    auto expected_image = image_reader.read("img_path");
     DrawSimplePpm("img_path");
-    //auto output = ReadPpmImage("img_path");
-    //REQUIRE(output == expected_image);
+    auto output = image_reader.read("drawn_img_path");
+    REQUIRE(output == expected_image);
 }
