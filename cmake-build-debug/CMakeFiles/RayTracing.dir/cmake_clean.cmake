@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RayTracing.dir/main.cpp.obj"
+  "CMakeFiles/RayTracing.dir/src/ImageLibrary/Image.cpp.obj"
   "CMakeFiles/RayTracing.dir/tests.cpp.obj"
   "RayTracing.exe"
   "RayTracing.exe.manifest"

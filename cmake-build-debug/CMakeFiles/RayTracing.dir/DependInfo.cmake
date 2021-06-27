@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/ibrah/Workspace/RayTracing/main.cpp" "C:/Users/ibrah/Workspace/RayTracing/cmake-build-debug/CMakeFiles/RayTracing.dir/main.cpp.obj"
+  "C:/Users/ibrah/Workspace/RayTracing/src/ImageLibrary/Image.cpp" "C:/Users/ibrah/Workspace/RayTracing/cmake-build-debug/CMakeFiles/RayTracing.dir/src/ImageLibrary/Image.cpp.obj"
   "C:/Users/ibrah/Workspace/RayTracing/tests.cpp" "C:/Users/ibrah/Workspace/RayTracing/cmake-build-debug/CMakeFiles/RayTracing.dir/tests.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
