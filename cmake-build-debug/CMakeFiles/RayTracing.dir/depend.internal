@@ -4,6 +4,16 @@
 CMakeFiles/RayTracing.dir/main.cpp.obj
  C:/Users/ibrah/Workspace/RayTracing/catch.hpp
  C:/Users/ibrah/Workspace/RayTracing/main.cpp
+CMakeFiles/RayTracing.dir/src/ImageLibrary/Image.cpp.obj
+ C:/Users/ibrah/Workspace/RayTracing/catch.hpp
+ C:/Users/ibrah/Workspace/RayTracing/src/ImageLibrary/Image.cpp
+ C:/Users/ibrah/Workspace/RayTracing/src/ImageLibrary/Image.h
+CMakeFiles/RayTracing.dir/src/Vector/vector.cpp.obj
+ C:/Users/ibrah/Workspace/RayTracing/src/Vector/vector.cpp
+CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.obj
+ C:/Users/ibrah/Workspace/RayTracing/catch.hpp
+ C:/Users/ibrah/Workspace/RayTracing/src/ImageLibrary/Image.h
+ C:/Users/ibrah/Workspace/RayTracing/test/ImageLibrary/ImageTest.cpp
 CMakeFiles/RayTracing.dir/tests.cpp.obj
  C:/Users/ibrah/Workspace/RayTracing/catch.hpp
  C:/Users/ibrah/Workspace/RayTracing/tests.cpp

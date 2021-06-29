@@ -114,11 +114,39 @@ CMakeFiles/RayTracing.dir/src/ImageLibrary/Image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RayTracing.dir/src/ImageLibrary/Image.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ibrah\Workspace\RayTracing\src\ImageLibrary\Image.cpp -o CMakeFiles\RayTracing.dir\src\ImageLibrary\Image.cpp.s
 
+CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.obj: CMakeFiles/RayTracing.dir/flags.make
+CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.obj: ../test/ImageLibrary/ImageTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ibrah\Workspace\RayTracing\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\RayTracing.dir\test\ImageLibrary\ImageTest.cpp.obj -c C:\Users\ibrah\Workspace\RayTracing\test\ImageLibrary\ImageTest.cpp
+
+CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ibrah\Workspace\RayTracing\test\ImageLibrary\ImageTest.cpp > CMakeFiles\RayTracing.dir\test\ImageLibrary\ImageTest.cpp.i
+
+CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ibrah\Workspace\RayTracing\test\ImageLibrary\ImageTest.cpp -o CMakeFiles\RayTracing.dir\test\ImageLibrary\ImageTest.cpp.s
+
+CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.obj: CMakeFiles/RayTracing.dir/flags.make
+CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.obj: ../test/Vector/VectorTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ibrah\Workspace\RayTracing\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\RayTracing.dir\test\Vector\VectorTest.cpp.obj -c C:\Users\ibrah\Workspace\RayTracing\test\Vector\VectorTest.cpp
+
+CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ibrah\Workspace\RayTracing\test\Vector\VectorTest.cpp > CMakeFiles\RayTracing.dir\test\Vector\VectorTest.cpp.i
+
+CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ibrah\Workspace\RayTracing\test\Vector\VectorTest.cpp -o CMakeFiles\RayTracing.dir\test\Vector\VectorTest.cpp.s
+
 # Object files for target RayTracing
 RayTracing_OBJECTS = \
 "CMakeFiles/RayTracing.dir/main.cpp.obj" \
 "CMakeFiles/RayTracing.dir/tests.cpp.obj" \
-"CMakeFiles/RayTracing.dir/src/ImageLibrary/Image.cpp.obj"
+"CMakeFiles/RayTracing.dir/src/ImageLibrary/Image.cpp.obj" \
+"CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.obj" \
+"CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.obj"
 
 # External object files for target RayTracing
 RayTracing_EXTERNAL_OBJECTS =
@@ -126,11 +154,13 @@ RayTracing_EXTERNAL_OBJECTS =
 RayTracing.exe: CMakeFiles/RayTracing.dir/main.cpp.obj
 RayTracing.exe: CMakeFiles/RayTracing.dir/tests.cpp.obj
 RayTracing.exe: CMakeFiles/RayTracing.dir/src/ImageLibrary/Image.cpp.obj
+RayTracing.exe: CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.obj
+RayTracing.exe: CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.obj
 RayTracing.exe: CMakeFiles/RayTracing.dir/build.make
 RayTracing.exe: CMakeFiles/RayTracing.dir/linklibs.rsp
 RayTracing.exe: CMakeFiles/RayTracing.dir/objects1.rsp
 RayTracing.exe: CMakeFiles/RayTracing.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ibrah\Workspace\RayTracing\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable RayTracing.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ibrah\Workspace\RayTracing\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable RayTracing.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\RayTracing.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
