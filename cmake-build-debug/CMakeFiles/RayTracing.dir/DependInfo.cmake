@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/ibrah/Workspace/RayTracing/main.cpp" "C:/Users/ibrah/Workspace/RayTracing/cmake-build-debug/CMakeFiles/RayTracing.dir/main.cpp.obj"
   "C:/Users/ibrah/Workspace/RayTracing/src/ImageLibrary/Image.cpp" "C:/Users/ibrah/Workspace/RayTracing/cmake-build-debug/CMakeFiles/RayTracing.dir/src/ImageLibrary/Image.cpp.obj"
+  "C:/Users/ibrah/Workspace/RayTracing/src/Ray/Ray.cpp" "C:/Users/ibrah/Workspace/RayTracing/cmake-build-debug/CMakeFiles/RayTracing.dir/src/Ray/Ray.cpp.obj"
   "C:/Users/ibrah/Workspace/RayTracing/test/ImageLibrary/ImageTest.cpp" "C:/Users/ibrah/Workspace/RayTracing/cmake-build-debug/CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.obj"
   "C:/Users/ibrah/Workspace/RayTracing/test/Vector/VectorTest.cpp" "C:/Users/ibrah/Workspace/RayTracing/cmake-build-debug/CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.obj"
   "C:/Users/ibrah/Workspace/RayTracing/tests.cpp" "C:/Users/ibrah/Workspace/RayTracing/cmake-build-debug/CMakeFiles/RayTracing.dir/tests.cpp.obj"

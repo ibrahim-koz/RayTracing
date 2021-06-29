@@ -6,6 +6,8 @@
 #define RAYTRACING_IMAGE_H
 
 #include <bits/stdc++.h>
+#include "../Vector/Vector.h"
+
 using namespace std;
 
 class Image {
@@ -74,10 +76,10 @@ public:
             ss.clear();
             auto ppmImage = new PpmImage(format_type, height, width, scale_factor);
 
-            int red, blue, green;
+            int red, green, blue;
             while (getline(myfile, line)) {
                 ss << line;
-                ss >> red >> blue >> green;
+                ss >> red >> green >> blue;
                 ss.clear();
                 ppmImage->AddPixel(red, green, blue);
             }
@@ -104,7 +106,9 @@ public:
     }
 };
 
-int DrawSimplePpm(const string &img_path);
+void write_color(ofstream &out, const color& pixel_color);
+int DrawSimplePpm(const string &img_path, const int img_height, const int img_width,
+                  void *(*WrappeeDrawingMethod)(int i, int j, int img_height , int img_width, ofstream& target));
 bool operator==(const PpmImage &ppm_image1, const PpmImage &ppm_image2);
 
 #endif //RAYTRACING_IMAGE_H

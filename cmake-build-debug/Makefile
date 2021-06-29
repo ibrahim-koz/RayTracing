@@ -195,6 +195,33 @@ src/ImageLibrary/Image.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/ImageLibrary/Image.cpp.s
 .PHONY : src/ImageLibrary/Image.cpp.s
 
+src/Ray/Ray.obj: src/Ray/Ray.cpp.obj
+
+.PHONY : src/Ray/Ray.obj
+
+# target to build an object file
+src/Ray/Ray.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/Ray/Ray.cpp.obj
+.PHONY : src/Ray/Ray.cpp.obj
+
+src/Ray/Ray.i: src/Ray/Ray.cpp.i
+
+.PHONY : src/Ray/Ray.i
+
+# target to preprocess a source file
+src/Ray/Ray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/Ray/Ray.cpp.i
+.PHONY : src/Ray/Ray.cpp.i
+
+src/Ray/Ray.s: src/Ray/Ray.cpp.s
+
+.PHONY : src/Ray/Ray.s
+
+# target to generate assembly for a file
+src/Ray/Ray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/Ray/Ray.cpp.s
+.PHONY : src/Ray/Ray.cpp.s
+
 test/ImageLibrary/ImageTest.obj: test/ImageLibrary/ImageTest.cpp.obj
 
 .PHONY : test/ImageLibrary/ImageTest.obj
@@ -291,6 +318,9 @@ help:
 	@echo ... src/ImageLibrary/Image.obj
 	@echo ... src/ImageLibrary/Image.i
 	@echo ... src/ImageLibrary/Image.s
+	@echo ... src/Ray/Ray.obj
+	@echo ... src/Ray/Ray.i
+	@echo ... src/Ray/Ray.s
 	@echo ... test/ImageLibrary/ImageTest.obj
 	@echo ... test/ImageLibrary/ImageTest.i
 	@echo ... test/ImageLibrary/ImageTest.s

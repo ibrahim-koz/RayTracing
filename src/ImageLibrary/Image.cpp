@@ -1,13 +1,22 @@
 #include <bits/stdc++.h>
-#include "../../catch.hpp"
 #include "Image.h"
 using namespace std;
 
 
-int DrawSimplePpm(const string &img_path) {
-    const int img_height = 256;
-    const int img_width = 256;
+void write_color(ofstream &out, const color& pixel_color){
+    auto r = pixel_color.x();
+    auto g = pixel_color.y();
+    auto b = pixel_color.z();
 
+    auto ir = static_cast<int>(255.999 * r);
+    auto ig = static_cast<int>(255.999 * g);
+    auto ib = static_cast<int>(255.999 * b);
+    out << ir << " " << ig << " " << ib << endl;
+}
+
+
+int DrawSimplePpm(const string &img_path, const int img_height, const int img_width,
+                  void *(*WrappeeDrawingMethod)(int i, int j, int img_height , int img_width, ofstream& target)) {
     ofstream target;
     target.open(img_path);
 
@@ -15,17 +24,9 @@ int DrawSimplePpm(const string &img_path) {
     target << img_height << " " << img_height << endl;
     target << 255 << endl;
 
-    for (int i = img_height - 1; i >= 0; --i) {
-        for (int j = 0; j < img_width; ++j) {
-            auto r = double(j) / (img_height - 1);
-            auto g = double(i) / (img_height - 1);
-            auto b = 0.25;
-
-            auto ir = static_cast<int>(255.999 * r);
-            auto ig = static_cast<int>(255.999 * g);
-            auto ib = static_cast<int>(255.999 * b);
-
-            target << ir << " " << ig << " " << ib << endl;
+    for (int j = img_height - 1; j >= 0; --j) {
+        for (int i = 0; i < img_width; ++i) {
+            WrappeeDrawingMethod(i, j,  img_height, img_width, target);
         }
     }
     target.close();
