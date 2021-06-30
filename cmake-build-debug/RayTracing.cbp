@@ -103,6 +103,9 @@
 		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/test/ImageLibrary/ImageTest.cpp">
 			<Option target="RayTracing"/>
 		</Unit>
+		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/test/Ray/RayTest.cpp">
+			<Option target="RayTracing"/>
+		</Unit>
 		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/test/Vector/VectorTest.cpp">
 			<Option target="RayTracing"/>
 		</Unit>
