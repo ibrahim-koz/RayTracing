@@ -14,23 +14,25 @@ class Ray {
     vec3 dir;
 public:
     Ray() {}
-    Ray(const point3 &origin, const vec3 &direction): org{origin}, dir{direction}{}
 
-    point3 origin() const{
+    Ray(const point3 &origin, const vec3 &direction) : org{origin}, dir{direction} {}
+
+    point3 origin() const {
         return org;
     }
 
-    vec3 direction() const{
+    vec3 direction() const {
         return dir;
     }
 
-    point3 at(double t) const{
+    point3 at(double t) const {
         return org + t * dir;
     }
 };
 
-
-color ray_color(const Ray &r);
+namespace helper_function {
+    bool hit_sphere(const point3 &center, double radius, const Ray &r);
+}
 
 struct MyWrappeeMethod {
     const double aspect_ratio;
@@ -57,6 +59,12 @@ struct MyWrappeeMethod {
     // we'll draw our picture through the viewport, so we will project our rays to our viewport first.
     vec3 left_lower_corner = origin + (-(viewport_height_vector / 2) - (viewport_width_vector / 2) + focal_point);
 
+    virtual color ray_color(const Ray &r) const {
+        vec3 unit_direction = unit_vector(r.direction());
+        auto t = 0.5 * (unit_direction.y() + 1.0);
+        return (1.0 - t) * color{1.0, 1.0, 1.0} + t * color{0.5, 0.7, 1.0};
+    }
+
     void operator()(int i, int j, ofstream &target) const {
         auto v = double(j) / (img_height - 1);
         auto u = double(i) / (img_width - 1);
@@ -65,6 +73,19 @@ struct MyWrappeeMethod {
                        left_lower_corner + u * viewport_width_vector + v * viewport_height_vector - origin};
         color pixel_color = ray_color(ray);
         write_color(target, pixel_color);
+    }
+};
+
+struct HitSphereWrappee : public MyWrappeeMethod {
+    HitSphereWrappee(double aspectRatio, int imgWidth) : MyWrappeeMethod(aspectRatio, imgWidth) {}
+
+    virtual color ray_color(const Ray &r) const {
+        if (helper_function::hit_sphere(point3{0, 0, -1}, 0.5, r)) {
+            return color{1, 0, 0};
+        }
+        auto unit_direction = unit_vector(r.direction());
+        auto t = 0.5 * (unit_direction.y() + 1.0);
+        return (1.0 - t) * color(1.0, 1.0, 1.0) + t * color(0.5, 0.7, 1.0);
     }
 };
 
