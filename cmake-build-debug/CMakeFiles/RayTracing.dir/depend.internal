@@ -23,5 +23,7 @@ CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.obj
  C:/Users/ibrah/Workspace/RayTracing/test/Vector/VectorTest.cpp
 CMakeFiles/RayTracing.dir/tests.cpp.obj
  C:/Users/ibrah/Workspace/RayTracing/catch.hpp
+ C:/Users/ibrah/Workspace/RayTracing/src/ImageLibrary/Image.h
+ C:/Users/ibrah/Workspace/RayTracing/src/Ray/Ray.h
  C:/Users/ibrah/Workspace/RayTracing/src/Vector/Vector.h
  C:/Users/ibrah/Workspace/RayTracing/tests.cpp

@@ -22,6 +22,8 @@ CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.obj: ../src/Vector/Vector.h
 CMakeFiles/RayTracing.dir/test/Vector/VectorTest.cpp.obj: ../test/Vector/VectorTest.cpp
 
 CMakeFiles/RayTracing.dir/tests.cpp.obj: ../catch.hpp
+CMakeFiles/RayTracing.dir/tests.cpp.obj: ../src/ImageLibrary/Image.h
+CMakeFiles/RayTracing.dir/tests.cpp.obj: ../src/Ray/Ray.h
 CMakeFiles/RayTracing.dir/tests.cpp.obj: ../src/Vector/Vector.h
 CMakeFiles/RayTracing.dir/tests.cpp.obj: ../tests.cpp
 

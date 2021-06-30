@@ -107,8 +107,25 @@ public:
 };
 
 void write_color(ofstream &out, const color& pixel_color);
-int DrawSimplePpm(const string &img_path, const int img_height, const int img_width,
-                  void *(*WrappeeDrawingMethod)(int i, int j, int img_height , int img_width, ofstream& target));
+
+template <typename Functor>
+int DrawSimplePpm(const string &img_path, int img_height, int img_width, Functor functor) {
+    ofstream target;
+    target.open(img_path);
+
+    target << "P3" << endl;
+    target << img_height << " " << img_height << endl;
+    target << 255 << endl;
+
+    for (int j = img_height - 1; j >= 0; --j) {
+        for (int i = 0; i < img_width; ++i) {
+            functor(i, j, target);
+        }
+    }
+    target.close();
+    return 0;
+}
+
 bool operator==(const PpmImage &ppm_image1, const PpmImage &ppm_image2);
 
 #endif //RAYTRACING_IMAGE_H

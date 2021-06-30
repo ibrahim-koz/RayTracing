@@ -15,15 +15,15 @@ public:
     Ray() {}
     Ray(const point3 &origin, const vec3 &direction): org{origin}, dir{direction}{}
 
-    [[nodiscard]] point3 origin() const{
+    point3 origin() const{
         return org;
     }
 
-    [[nodiscard]] vec3 direction() const{
+    vec3 direction() const{
         return dir;
     }
 
-    [[nodiscard]] point3 at(double t) const{
+    point3 at(double t) const{
         return org + t * dir;
     }
 };

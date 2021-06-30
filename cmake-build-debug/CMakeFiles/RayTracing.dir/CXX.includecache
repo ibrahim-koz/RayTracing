@@ -600,6 +600,10 @@ bits/stdc++.h
 ../Vector/Vector.h
 C:/Users/ibrah/Workspace/RayTracing/src/Vector/Vector.h
 
+C:/Users/ibrah/Workspace/RayTracing/src/Ray/Ray.h
+../Vector/Vector.h
+C:/Users/ibrah/Workspace/RayTracing/src/Vector/Vector.h
+
 C:/Users/ibrah/Workspace/RayTracing/src/Vector/Vector.h
 bits/stdc++.h
 -
@@ -611,4 +615,16 @@ bits/stdc++.h
 -
 ../../catch.hpp
 C:/Users/ibrah/Workspace/RayTracing/catch.hpp
+
+C:/Users/ibrah/Workspace/RayTracing/tests.cpp
+bits/stdc++.h
+-
+catch.hpp
+C:/Users/ibrah/Workspace/RayTracing/catch.hpp
+src/Vector/Vector.h
+C:/Users/ibrah/Workspace/RayTracing/src/Vector/Vector.h
+src/Ray/Ray.h
+C:/Users/ibrah/Workspace/RayTracing/src/Ray/Ray.h
+src/ImageLibrary/Image.h
+C:/Users/ibrah/Workspace/RayTracing/src/ImageLibrary/Image.h
 
