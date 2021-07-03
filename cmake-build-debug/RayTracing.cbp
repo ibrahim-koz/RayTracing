@@ -85,6 +85,9 @@
 		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/main.cpp">
 			<Option target="RayTracing"/>
 		</Unit>
+		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/src/Hittable/Hittable.h">
+			<Option target="RayTracing"/>
+		</Unit>
 		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/src/ImageLibrary/Image.cpp">
 			<Option target="RayTracing"/>
 		</Unit>
@@ -98,6 +101,12 @@
 			<Option target="RayTracing"/>
 		</Unit>
 		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/src/Vector/Vector.h">
+			<Option target="RayTracing"/>
+		</Unit>
+		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/src/ViewPort/ViewPort.cpp">
+			<Option target="RayTracing"/>
+		</Unit>
+		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/src/ViewPort/ViewPort.h">
 			<Option target="RayTracing"/>
 		</Unit>
 		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/test/ImageLibrary/ImageTest.cpp">

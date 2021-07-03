@@ -222,6 +222,33 @@ src/Ray/Ray.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/Ray/Ray.cpp.s
 .PHONY : src/Ray/Ray.cpp.s
 
+src/ViewPort/ViewPort.obj: src/ViewPort/ViewPort.cpp.obj
+
+.PHONY : src/ViewPort/ViewPort.obj
+
+# target to build an object file
+src/ViewPort/ViewPort.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/ViewPort/ViewPort.cpp.obj
+.PHONY : src/ViewPort/ViewPort.cpp.obj
+
+src/ViewPort/ViewPort.i: src/ViewPort/ViewPort.cpp.i
+
+.PHONY : src/ViewPort/ViewPort.i
+
+# target to preprocess a source file
+src/ViewPort/ViewPort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/ViewPort/ViewPort.cpp.i
+.PHONY : src/ViewPort/ViewPort.cpp.i
+
+src/ViewPort/ViewPort.s: src/ViewPort/ViewPort.cpp.s
+
+.PHONY : src/ViewPort/ViewPort.s
+
+# target to generate assembly for a file
+src/ViewPort/ViewPort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/ViewPort/ViewPort.cpp.s
+.PHONY : src/ViewPort/ViewPort.cpp.s
+
 test/ImageLibrary/ImageTest.obj: test/ImageLibrary/ImageTest.cpp.obj
 
 .PHONY : test/ImageLibrary/ImageTest.obj
@@ -348,6 +375,9 @@ help:
 	@echo ... src/Ray/Ray.obj
 	@echo ... src/Ray/Ray.i
 	@echo ... src/Ray/Ray.s
+	@echo ... src/ViewPort/ViewPort.obj
+	@echo ... src/ViewPort/ViewPort.i
+	@echo ... src/ViewPort/ViewPort.s
 	@echo ... test/ImageLibrary/ImageTest.obj
 	@echo ... test/ImageLibrary/ImageTest.i
 	@echo ... test/ImageLibrary/ImageTest.s
