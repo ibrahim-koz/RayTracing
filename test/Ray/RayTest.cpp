@@ -14,7 +14,7 @@ TEST_CASE("Putting a camera from which the rays will be emitted") {
     image_reader.PickStrategy(new PpmImageStrategy());
 
 
-    const double aspect_ratio = 16.0 / 9.0;
+    const double aspect_ratio = 16 / 9;
     const int img_width = 400;
     const int img_height = img_width * aspect_ratio;
     ViewPort* viewPort = new ViewPort{2.0 * aspect_ratio, 2.0, point3{0, 0, 0}, 1.0};

@@ -79,11 +79,11 @@ struct MyWrappeeMethod {
         color pixel_color;
         if (hitRecordOfTheClosestHittable != nullptr) {
             auto hittableColorAssigner = hittableColorAssigners.find(hitRecordOfTheClosestHittable->id);
-            //pixel_color = hittableColorAssigner->second->Color(*hitRecordOfTheClosestHittable);
-            pixel_color = color{1, 0, 0};
+            pixel_color = hittableColorAssigner->second->Color(*hitRecordOfTheClosestHittable);
+            //pixel_color = color{1, 0, 0};
         } else {
-            //pixel_color = notHitColorAssign();
-            pixel_color = color{0, 0, 1};
+            pixel_color = notHitColorAssign();
+            //pixel_color = color{0, 0, 1};
         }
         write_color(target, pixel_color);
     }
@@ -93,8 +93,7 @@ struct MyWrappeeMethod {
         HitRecord *hitRecordOfTheClosestHittable = nullptr;
         for (const auto &hittable : hittables) {
             auto hitRecord = hittable->hit(ray);
-            //&& t_min < hitRecord->t && hitRecord->t < t_max
-            if (hitRecord != nullptr) {
+            if (hitRecord != nullptr && t_min < hitRecord->t && hitRecord->t < t_max) {
                 t_max = hitRecord->t;
                 hitRecordOfTheClosestHittable = hitRecord;
             }
