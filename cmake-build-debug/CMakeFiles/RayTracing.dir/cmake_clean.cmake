@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/RayTracing.dir/main.cpp.obj"
   "CMakeFiles/RayTracing.dir/src/ImageLibrary/Image.cpp.obj"
   "CMakeFiles/RayTracing.dir/src/Ray/Ray.cpp.obj"
+  "CMakeFiles/RayTracing.dir/src/Utils/Utils.cpp.obj"
   "CMakeFiles/RayTracing.dir/src/ViewPort/ViewPort.cpp.obj"
   "CMakeFiles/RayTracing.dir/test/ImageLibrary/ImageTest.cpp.obj"
   "CMakeFiles/RayTracing.dir/test/Ray/RayTest.cpp.obj"

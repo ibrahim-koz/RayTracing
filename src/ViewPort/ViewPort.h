@@ -8,6 +8,7 @@
 #include "../Ray/Ray.h"
 #include "../Hittable/Hittable.h"
 #include "bits/stdc++.h"
+#include "../Utils/Utils.h"
 
 using namespace std;
 
@@ -65,8 +66,7 @@ struct MyWrappeeMethod {
         hittableColorAssigners.insert({hittable->id, hittableColorAssigner});
     }
 
-    // TODO: ray_color and hit check will be separated.
-    void operator()(int i, int j, ofstream &target) const {
+    virtual void operator()(int i, int j, ofstream &target) const {
         auto v = double(j) / (img_height - 1);
         auto u = double(i) / (img_width - 1);
 
@@ -106,6 +106,39 @@ struct MyWrappeeMethod {
     }
 
     // we'll create hittable_color;
+};
+
+
+struct AntiAliasingWrappeeMethod: public MyWrappeeMethod{
+    int samples_per_pixel;
+
+    AntiAliasingWrappeeMethod(int imgWidth, int imgHeight, ViewPort *viewPort,
+                              int samplesPerPixel) : MyWrappeeMethod(imgWidth, imgHeight,
+                                                                     viewPort),
+                                                     samples_per_pixel(samplesPerPixel) {}
+
+    void operator()(int i, int j, ofstream &target) const override {
+        color pixel_color{0, 0, 0};
+        for (int s = 0; s < samples_per_pixel; ++s){
+            auto v = (double(j) + random_double()) / (img_height - 1);
+            auto u = (double(i) + random_double()) / (img_width - 1);
+            auto dir = viewPort->left_lower_corner + u * viewPort->viewport_width_vector +
+                       v * viewPort->viewport_height_vector - viewPort->origin;
+            auto ray = Ray{viewPort->origin,
+                           dir};
+            auto hitRecordOfTheClosestHittable = hit(ray, -100000);
+            if (hitRecordOfTheClosestHittable != nullptr) {
+                auto hittableColorAssigner = hittableColorAssigners.find(hitRecordOfTheClosestHittable->id);
+                pixel_color += hittableColorAssigner->second->Color(*hitRecordOfTheClosestHittable);
+                //pixel_color = color{1, 0, 0};
+            } else {
+                pixel_color += notHitColorAssign();
+                //pixel_color = color{0, 0, 1};
+            }
+        }
+        write_color_anti_aliasing(target, pixel_color, samples_per_pixel);
+    }
+
 };
 
 #endif //RAYTRACING_VIEWPORT_H

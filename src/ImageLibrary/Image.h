@@ -107,6 +107,7 @@ public:
 };
 
 void write_color(ofstream &out, const color& pixel_color);
+void write_color_anti_aliasing(ofstream &out, const color& pixel_color, int samples_per_pixel);
 
 template <typename Functor>
 int DrawSimplePpm(const string &img_path, int img_height, int img_width, Functor functor) {

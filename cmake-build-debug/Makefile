@@ -222,6 +222,33 @@ src/Ray/Ray.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/Ray/Ray.cpp.s
 .PHONY : src/Ray/Ray.cpp.s
 
+src/Utils/Utils.obj: src/Utils/Utils.cpp.obj
+
+.PHONY : src/Utils/Utils.obj
+
+# target to build an object file
+src/Utils/Utils.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/Utils/Utils.cpp.obj
+.PHONY : src/Utils/Utils.cpp.obj
+
+src/Utils/Utils.i: src/Utils/Utils.cpp.i
+
+.PHONY : src/Utils/Utils.i
+
+# target to preprocess a source file
+src/Utils/Utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/Utils/Utils.cpp.i
+.PHONY : src/Utils/Utils.cpp.i
+
+src/Utils/Utils.s: src/Utils/Utils.cpp.s
+
+.PHONY : src/Utils/Utils.s
+
+# target to generate assembly for a file
+src/Utils/Utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RayTracing.dir\build.make CMakeFiles/RayTracing.dir/src/Utils/Utils.cpp.s
+.PHONY : src/Utils/Utils.cpp.s
+
 src/ViewPort/ViewPort.obj: src/ViewPort/ViewPort.cpp.obj
 
 .PHONY : src/ViewPort/ViewPort.obj
@@ -375,6 +402,9 @@ help:
 	@echo ... src/Ray/Ray.obj
 	@echo ... src/Ray/Ray.i
 	@echo ... src/Ray/Ray.s
+	@echo ... src/Utils/Utils.obj
+	@echo ... src/Utils/Utils.i
+	@echo ... src/Utils/Utils.s
 	@echo ... src/ViewPort/ViewPort.obj
 	@echo ... src/ViewPort/ViewPort.i
 	@echo ... src/ViewPort/ViewPort.s
