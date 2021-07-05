@@ -50,24 +50,33 @@ public:
         this->id = id;
     }
 
-    virtual HitRecord* hit(const Ray &ray) const = 0;
+    virtual shared_ptr<HitRecord> hit(const Ray &ray) const = 0;
 };
 
-class HittableColorAssigner {
+class IHittableColorAssigner{
+    virtual color Color(const HitRecord &hitRecord) = 0;
+};
+
+class HittableColorAssigner: IHittableColorAssigner{
 public:
-    color Color(const HitRecord &hitRecord) {
-        return color{1.0, 0.0, 0.0};
+    color colorOfObject;
+
+    HittableColorAssigner(color colorOfObject) : colorOfObject(colorOfObject) {}
+
+    color Color(const HitRecord &hitRecord) override {
+        return colorOfObject;
     }
 };
 
-class SphereHittable : Hittable {
+
+class SphereHittable : public Hittable {
 public:
     point3 center;
     double radius;
     SphereHittable(int id, const point3 &center, double radius) : Hittable(id),
                                                                   center(center), radius(radius) {}
 
-    virtual HitRecord *hit(const Ray &ray) const override {
+    virtual shared_ptr<HitRecord> hit(const Ray &ray) const override {
         vec3 oc = ray.origin() - center;
         auto a = ray.direction().length_squared();
         auto half_b = dot(oc, ray.direction());
@@ -79,7 +88,7 @@ public:
         auto sqrtd = sqrt(discriminant);
         auto root = (-half_b - sqrtd) / a;
 
-        HitRecord *hitRecord = new HitRecord{};
+        auto hitRecord = make_shared<HitRecord>();
         hitRecord->id = id;
         hitRecord->t = root;
         hitRecord->p = ray.at(root);

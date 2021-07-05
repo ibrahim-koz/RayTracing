@@ -106,6 +106,9 @@
 		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/src/Utils/Utils.h">
 			<Option target="RayTracing"/>
 		</Unit>
+		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/src/Vector/Vector.cpp">
+			<Option target="RayTracing"/>
+		</Unit>
 		<Unit filename="C:/Users/ibrah/Workspace/RayTracing/src/Vector/Vector.h">
 			<Option target="RayTracing"/>
 		</Unit>

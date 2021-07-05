@@ -617,12 +617,12 @@ random
 C:/Users/ibrah/Workspace/RayTracing/src/Vector/Vector.h
 bits/stdc++.h
 -
-
-C:/Users/ibrah/Workspace/RayTracing/src/ViewPort/ViewPort.cpp
-ViewPort.h
-C:/Users/ibrah/Workspace/RayTracing/src/ViewPort/ViewPort.h
+../Utils/Utils.h
+C:/Users/ibrah/Workspace/RayTracing/src/Utils/Utils.h
 
 C:/Users/ibrah/Workspace/RayTracing/src/ViewPort/ViewPort.h
+utility
+-
 ../Ray/Ray.h
 C:/Users/ibrah/Workspace/RayTracing/src/Ray/Ray.h
 ../Hittable/Hittable.h
